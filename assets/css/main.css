@@ -1,27 +1,169 @@
+
+
+@media only screen and (max-width: 720px) {
+
+.flex-col-item {position: absolute;
+bottom: 0; }
+
+ #avatar {
+            width: 100%;
+            border-radius: 40px;
+            align-items: center;
+            text-align: center;}
+            
+            #body{ position: relative;}
+
+
+#body-aside {
+   
+    display: none;
+    
+    
+   }
+   #body-content {
+    position: relative;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    
+   
+    
+}
+
+p { background-color:var(--bg-color);
+max-width: 100%;
+text-align: center;
+margin: 5px 5px;
+align-items: center;
+
+}
+
+#title-bar {
+    display: none;
+  
+}
+
+#app {
+    height: fit-content;
+    position: relative;
+    max-width:720px;
+    bottom: 0;
+    display: table;
+    overflow: auto;
+  
+    align-items: center;
+    
+    
+}
+
+
+#tool-bar {
+  height: 70px;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  bottom: 0px;
+  background-color:var(--shadow-bg-color);
+  margin-bottom: 0;
+  margin:0
+  
+}
+
+#mobile-app { display: none }
+
+
+#toggler-layout {
+display: none;
+}
+
+
+
+.divider-vertical { 
+display: none } 
+
+ .button-link{
+         width: 85%;           
+          display: inline-table;
+          font-size: 24px;
+          border: 3px solid var(--shadow-bg-color);
+          align-items: center;
+          padding: 20px;
+          
+          text-align: center;
+          } 
+          
+          
+          
+  #blocks {
+    
+    position: relative;
+   
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    
+    
+    margin-bottom: 75px}}
+
+
+
 :root {
-    --bg-color: #ffffff;
-    --border-color: #000000;
-    --shadow-bg-color: rgba(0, 0, 0, 0.1);
+    --bg-color: lightcyan;
+    --border-color: green;
+    --shadow-bg-color: mintcream;
     --shadow-font-color: rgba(0, 0, 0, 0.5);
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --link-color: green;
+    --link-visited-color: coral
+    
 }
 
 :root.dark {
     
-    --bg-color: #000000;
-    --border-color: #ffffff;
-    --shadow-bg-color: rgba(255, 255, 255, 0.2);
+    --bg-color: #303436;
+    --border-color: #fca138;
+    --shadow-bg-color: rgb(120,120,120);
     --shadow-color: rgba(255, 255, 255, 0.5);
     --shadow-font-color: rgba(255, 255, 255, 0.5);
+    --link-color: aquamarine;
+    --link-visited-color: aqua;
 
-    color: white;
+    color: mintcream;
+
 }
+
 
 body {
     background-color: var(--bg-color);
     margin: 0;
     scroll-behavior: smooth;
+    font-family: 'arial', san-serif;
+    font-style: normal;
+    font-size: 20px;
+    height: 100%
+    
+    
 }
+
+
+table, th, td,tb {
+ width: 100%;
+  padding: 15px;
+  text-align: left;
+  }
+ 
+ 
+
+th {background-color: coral;}
+
+tb, tr:nth-child(odd) {background-color:var(--shadow-bg-color) }
+tb {background-color:var(--bg-color); 
+}
+ 
+
+
+
 
 .flex-single-col {
     display: flex;
@@ -42,6 +184,7 @@ body {
 .flex-col-item {
     flex: none;
     margin: 2px 2px;
+    
 }
 
 .flex-rest-item {
@@ -53,6 +196,7 @@ body {
     flex-direction: row;
     height: 100%;
     flex-wrap: nowrap;
+    
 }
 
 .with-border {
@@ -95,6 +239,7 @@ body {
     white-space: nowrap;
     user-select: none;
     cursor: pointer;
+    
 }
 
 .widget .widget-body {
@@ -110,7 +255,15 @@ body {
     transition: all 1s;
 }
 
-.button-link,
+a:link { 
+   color:var(--link-color);
+   text-decoration: none;
+} 
+a:visited { 
+   color: var(--link-visited-color)
+   }
+
+.button-link,s
 .link {
     text-decoration: none;
     color: inherit;
@@ -127,12 +280,18 @@ body {
 
 #app {
     height: 100vh;
-    min-width: 720px;
+    min-width: 400px
+    
+    
 }
 
 #tool-bar {
-    height: 32px;
+    
     user-select: none;
+    background-color: var(--shadow-bg-color);
+    border: 3px solid var(--border-color);
+    margin: 0;
+    
 }
 
 #other-tool .iconfont,
@@ -163,11 +322,17 @@ body {
 
 #title-bar {
     height: 32px;
+    width: 100%;
+    min-width:720px;
     user-select: none;
+    background-color: #00bd7eff;
+    overflow: hidden;
 }
 
 #main-body {
     position: relative;
+    align-items: center;
+   
 }
 
 #search-result {
@@ -253,23 +418,49 @@ body {
     min-width: 240px;
     max-width: 480px;
     position: relative;
+    
 }
+
+
+
 
 #widgets {
     position: absolute;
-    inset: 0;
+    inset: 20px;
     overflow: auto;
 }
 
 #body-content {
     position: relative;
+    width: 100%;
+    
+    align-items: center;
+    
 }
 
-#blocks {
-    position: absolute;
-    inset: 0;
-    overflow: auto;
+p { background-color:var(--bg-color);
+text-align: center
+
+
+
 }
+  #blocks {
+    
+    position: relative;
+    inset: 0;
+    height: 100%;
+    
+    overflow: auto;
+    
+    align-items: center;
+    
+    margin-bottom: 75px }}
+
+  
+}
+
+
+
 
 /* 自定义滚动条 */
 /* 整体部分，定义尺寸、背景 */

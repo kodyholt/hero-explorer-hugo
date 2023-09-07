@@ -87,7 +87,18 @@
         <span class="flex-row-item folderview-size">Size</span>
     </section>
     <section id="folderview-body" class="flex-single-col">
-        {{range .Sections}}
+           
+      {{ $type := .Type }}
+      {{ range $key, $value := .Data.Terms.ByCount}}
+      {{ $name := .Name }}
+      {{ $count := .Count }}
+      {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+        
+          <a class="terms-title" href="{{ .Permalink }}">{{ .Name }} ({{ $count }})</a>
+        
+      {{ end }}
+      {{ end }}
+    </ul>
         <div class="flex-single-row">
             <span class="flex-row-item flex-rest-item folderview-name">
                 <a class="folderview-body" href="{{.Permalink}}">{{.Title}}</a>
@@ -96,7 +107,7 @@
             <span class="flex-row-item folderview-type">{{ i18n "section"}}</span>
             <span class="flex-row-item folderview-size">{{ i18n "page" (dict "Count" (len .Pages))}}</span>
         </div>
-        {{ end }}
+      
         {{ range .RegularPages }}
         <div class="flex-single-row">
             <span class="flex-row-item flex-rest-item folderview-name">

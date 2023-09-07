@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{.Site.Language.Lang}}">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
     {{- partial "head.html" . -}}
 </head>
+
 <body>
     {{ block "body" . }}
     <main id="app" class="flex-single-col">
@@ -83,7 +85,7 @@
                     <div id="search-result-mask" class="flex-row-item flex-rest-item"></div>
                     <div id="result-mask-divider" class="flex-row-item divider-vertical" style="height: auto;"></div>
                     <div id="search-result-content" class="flex-row-item">
-                        输入回车键，查看搜索结果。
+                       Press Enter to View Search Results
                     </div>
                 </div>
             </section>
@@ -106,5 +108,7 @@
         }
     </script>
     {{ end }}
+    
+
 </body>
 </html>
